@@ -11,11 +11,17 @@
 
 <form method ="get">
     <div  class="input-group">
-        <input type="search" class="form-control" value="" />
+
+        <input type="search" 
+               class="form-control" 
+               value="@Model.SearchTerm" 
+               name="searchTerm"/>
+
         <div class="input-group-append">
             <button class="btn btn-secondary">
                 <i class="fas fa-search"></i>
             </button>
+
         </div>
     </div>
 </form>
