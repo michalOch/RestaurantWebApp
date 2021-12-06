@@ -20,9 +20,10 @@ namespace OdeToFood.Data
                 new Restaurant() { Id = 7, Name = "La Costa", Location = "California", Cuisine = CuisineType.Mexican },
             };
         }
-        public IEnumerable<Restaurant> GetAll()
+        public IEnumerable<Restaurant> GetRestaurantsByName(string name = null)
         {
             return from r in restaurants
+                   where string.IsNullOrWhiteSpace(r.Name) != null || r.Name.StartsWith(name)
                    orderby r.Name
                    select r;
         }
